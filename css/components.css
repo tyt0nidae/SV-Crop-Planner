@@ -1,0 +1,76 @@
+/* --- Buttons and Selects --- */
+button, select {
+  font-family: var(--font-family);
+  background-color: var(--button-bg);
+  border: 2px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  color: var(--text-main);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover, select:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.03);
+}
+
+/* --- Modal --- */
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--bg-light);
+  padding: 24px;
+  border-radius: 10px;
+  border: 3px solid var(--accent);
+  width: 350px;
+  max-width: 95%;
+  font-family: var(--font-family);
+  color: var(--text-main);
+  box-shadow: var(--box-shadow);
+}
+
+.close-btn {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal .close-btn {
+  font-size: 30px;
+  color: #333;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.modal .close-btn:hover {
+  color: red;
+}
+
+.modal .close-btn:focus {
+  outline: none;
+}
+
+.modal .modal-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+}

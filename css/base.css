@@ -1,0 +1,27 @@
+/* --- Variables --- */
+:root {
+  --bg-light: #f9efe1;
+  --bg-dark: #e0c79d;
+  --accent: #c6a96b;
+  --text-main: #744d1e;
+  --text-muted: #7c6c57;
+  --highlight: #ffe6a1;
+  --border-color: #a67c52;
+  --button-hover: #f0d28a;
+  --button-bg: #f7e2b0;
+  --font-family: 'Courier New', Courier, monospace;
+  --border-radius: 6px;
+  --box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* --- General --- */
+body {
+  background-image: url(../icons/background/fondo.jpg);
+  font-family: var(--font-family);
+  color: var(--text-main);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
