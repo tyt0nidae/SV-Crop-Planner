@@ -191,3 +191,6 @@ function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, curr
     regrowthDay += crop.regrowthTime;
   }
 }
+export function getCalendarSeason() {
+  return calendarSeason;
+}

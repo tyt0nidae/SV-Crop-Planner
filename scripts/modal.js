@@ -1,14 +1,15 @@
-import { plantedCrops, currentSeason } from "./crops.js";
+import { plantedCrops, currentSeason} from "./crops.js";
 import { savePlantedCrops } from "./storage.js";
 import { createCalendar } from "./calendar.js";
 import { capitalizeFirstLetter, getStardewDateFromAbsoluteDay } from "./utils.js";
 import { crops } from "./crops-data.js";
+import { getCalendarSeason } from "./calendar.js";
 
 export function openPlantModal(day) {
   document.querySelector(".modal")?.remove();
 
   const availableCrops = Object.entries(crops).filter(([_, crop]) =>
-    crop.season?.includes(currentSeason)
+    crop.season?.includes(getCalendarSeason())
   );
 
   document.body.insertAdjacentHTML("beforeend", `
@@ -82,12 +83,14 @@ export function openPlantModal(day) {
 
   plantButton.addEventListener("click", () => {
     const cropKey = cropSelect.value;
-    if (!plantedCrops[currentSeason][day]) {
-      plantedCrops[currentSeason][day] = [];
+    const season = getCalendarSeason();
+    if (!plantedCrops[season][day]) {
+      plantedCrops[season][day] = [];
     }
-    plantedCrops[currentSeason][day].push({ cropKey, plantedSeason: currentSeason, fertilizer: selectedFertilizer });
+  plantedCrops[season][day].push({ cropKey, plantedSeason: season, fertilizer: selectedFertilizer });
+
     savePlantedCrops();
-    createCalendar(currentSeason);
+    createCalendar(getCalendarSeason());
     modal.remove();
   });
 
