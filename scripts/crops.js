@@ -17,6 +17,5 @@ export let plantedCrops = {
 };
 
 export let currentSeason = "primavera";
-
 import { crops } from "./crops-data.js";
 export { crops };
