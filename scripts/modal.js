@@ -59,9 +59,10 @@ export function openPlantModal(day) {
     const crop = crops[cropSelect.value];
     const dayNum = parseInt(day.split(" ")[1]);
     const daysLeft = 28 - dayNum + 1;
-    const diesAtEnd = crop.diesAtEndOf?.includes(currentSeason);
+    const season = getCalendarSeason();
+    const diesAtEnd = crop.diesAtEndOf?.includes(season);
     const firstHarvestLate = crop.growthTime > daysLeft;
-
+  
     if (diesAtEnd && firstHarvestLate) {
       warningText.textContent = `⚠️ Este cultivo muere al final de temporada y no alcanzará a cosecharse si lo plantas el ${day}.`;
       plantButton.disabled = true;
@@ -69,7 +70,7 @@ export function openPlantModal(day) {
       warningText.textContent = "";
       plantButton.disabled = false;
     }
-  }
+  }  
 
   fertilizerSelect.addEventListener("change", e => {
     selectedFertilizer = e.target.value;
