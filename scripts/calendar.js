@@ -4,7 +4,7 @@ import { savePlantedCrops } from "./storage.js";
 import { openPlantModal } from "./modal.js";
 import { events } from './events-data.js';
 
-let calendarSeason = currentSeason;
+export let calendarSeason = currentSeason;
 
 export function clearMonth() {
   plantedCrops[calendarSeason] = {};
