@@ -19,9 +19,9 @@ body {
   background-image: url(../icons/background/fondo.jpg);
   font-family: var(--font-family);
   color: var(--text-main);
-  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  margin: 0;
 }
 

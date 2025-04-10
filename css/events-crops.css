@@ -1,7 +1,10 @@
 /* --- Event Icons --- */
 .event-icons {
   display: flex;
-  margin-top: auto;
+  height: 60px;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .event-icon-container {
@@ -9,8 +12,8 @@
   align-items: center;
   transition: transform 0.3s ease;
   position: relative;
-  width: 100%;
-  background: transparent;
+  flex: 0;
+  height: 50px;
 }
 
 .event-icon:hover {
@@ -18,20 +21,24 @@
 }
 
 .event-icon {
-  height: 28px;
-  max-width: 25px;
-  padding: 8px;
+  width: 28px;
   object-fit: contain;
+  margin-left: 8px;
+  margin-right: 6px;
 }
 
 .event-name {
-  font-size: 0.65em;
+  font-size: 0.7em;
   text-align: left;
-  padding: 5px 8px;
+  padding: 5px;
   display: none;
   visibility: hidden;
   white-space: nowrap;
   position: relative;
+}
+
+.event-icon-container:hover {
+  flex: 1;
 }
 
 .event-icon-container:hover .event-name {
@@ -63,25 +70,23 @@
 
 /* --- Cultivos (Crops) --- */
 .crop-info {
-  max-height: 90px;
   display: flex;
-  flex-grow: 0;
   align-items: center;
+  height: 60px;
+  margin-top: 5px;
 }
 
 .crop-info-wrapper {
   display: flex;
   align-items: center;
-  padding-top: 3px;
-  width: 100%;
-  box-sizing: border-box;
+  height: 50px;
 }
 
 .crop-icon {
-  width: 28px;
   height: 28px;
-  padding-left: 5px;
   object-fit: contain;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .crop-icon:hover {
@@ -91,10 +96,9 @@
 .crop-tag {
   position: relative;
   transition: all 0.3s ease;
-  padding: 3px;
-  height: auto;
-  display: flex;
-  width: 100%;
+  flex: 0;
+  white-space: nowrap;
+  margin-right: 5px;
 }
 
 .crop-tag:hover .crop-details {
@@ -103,6 +107,11 @@
   transform: scaleY(1);
   display: flex;
   flex-direction: column;
+}
+
+.crop-tag:hover{
+  flex:1;
+  
 }
 
 .crop-tag::before {
@@ -127,14 +136,12 @@
 
 .crop-details {
   font-family: var(--font-family);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   visibility: hidden;
   pointer-events: none;
   transform-origin: left;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 5px 8px;
+  padding: 10px;
   display: none;
 }
 
@@ -142,4 +149,14 @@
 .growth-status {
   color: #888;
   white-space: nowrap;
+  margin-top: 2px;
+}
+
+/* --- Plant Btn --- */
+
+.crop-more-container {
+  height: 30px;
+  margin-left: auto;
+  order: 99;
+  transform: none;
 }

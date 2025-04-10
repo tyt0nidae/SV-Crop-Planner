@@ -39,12 +39,12 @@ h2 {
   grid-template-columns: repeat(7, 1fr);
   grid-auto-rows: minmax(120px, auto);
   gap: 10px;
-  margin-bottom: 20px;
   border: 8px double var(--border-color);
   padding: 8px;
   background-color: #fff8e1;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
-  width: 80%;
+  width: 85%;
+  height: 620px;
 }
 
 .calendar-day {
@@ -68,7 +68,6 @@ h2 {
 .day-header {
   font-weight: bold;
   border-bottom: 2px solid #ccc;
-  width: 100%;
   color: var(--text-main);
   border-color: #a67c52;
 }

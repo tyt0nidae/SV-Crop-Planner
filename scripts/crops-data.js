@@ -456,7 +456,7 @@ export const crops = [
     name: "Fruta Milenaria",
     season: ["primavera", "verano", "otoño"],
     growthTime: 28,
-    regrowthTime: 3,
+    regrowthTime: 7,
     growthStages: [2,7,7,7,5],
     diesAtEndOf: ["otoño"],
     fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
