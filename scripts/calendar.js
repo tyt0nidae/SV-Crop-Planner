@@ -100,7 +100,6 @@ function renderAllCrops(current) {
   });
 }
 
-
 function createCropTag(crop, plantDay, harvestDay, i, totalDay, stageIdx) {
   const tag = document.createElement("div");
   tag.className = "crop-tag";
@@ -221,12 +220,13 @@ function handlePlanting(crop, plantDay, cropData, printed, calendarCells, curren
         `;
         cell.appendChild(tag);
         printed.add(key);
+        console.log(`Mostrando ${crop.name} en día ${day}, planted ${cropData.plantedSeason || current}`);
       }
     }
   }
 }
 
-function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, printed, calendarCells, displayedIcons) {
+async function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, printed, calendarCells, displayedIcons) {
   let growthStageIndex = 0;
   let currentGrowthTime = 0;
 
@@ -234,29 +234,32 @@ function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, printe
     const totalDay = absoluteStart + i + 1;
     const { season: targetSeason, day: dayInSeason } = getSeasonAndDay(totalDay);
     const stageType = 'growth';
-    const key = `${crop.key}-${totalDay}-${growthStageIndex}-${stageType}`;
-    const displayKey = `${crop.key}-stage${growthStageIndex}-${stageType}-${plantDay}`;
+    
+    while (i >= currentGrowthTime + crop.growthStages[growthStageIndex] && growthStageIndex < crop.growthStages.length - 1) {
+      growthStageIndex++;
+      currentGrowthTime = i;
+    }
+  
+    const key = `${crop.key}-${plantDay}-${absoluteStart}-${totalDay}-${growthStageIndex}`;
     const cell = calendarCells[`Día ${dayInSeason}`];
-
+  
     if (targetSeason === current && i < growthTime - 1 && cell && !printed.has(key)) {
-      while (i >= currentGrowthTime + crop.growthStages[growthStageIndex] && growthStageIndex < crop.growthStages.length - 1) {
-        growthStageIndex++;
-        currentGrowthTime = i;
-      }
-
       if (!displayedIcons[dayInSeason]) {
         displayedIcons[dayInSeason] = new Set();
       }
-
-      if (!displayedIcons[dayInSeason].has(displayKey)) {
+  
+      if (!displayedIcons[dayInSeason].has(key)) {
         console.log(`Mostrando ${crop.name} en día ${dayInSeason}, etapa ${growthStageIndex}`);
         const tag = createCropTag(crop, plantDay, absoluteStart + growthTime, i, totalDay, growthStageIndex);
+  
         cell.appendChild(tag);
-        displayedIcons[dayInSeason].add(displayKey);
+  
+        displayedIcons[dayInSeason].add(key);
         printed.add(key);
       }
     }
   }
+  
 }
 
 export function getCalendarSeason() {

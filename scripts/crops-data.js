@@ -1,6 +1,7 @@
 export const crops = [
   {
     name: "Ajo",
+    key: "Ajo",
     season: ["primavera"],
     growthTime: 4,
     growthStages: [1,1,1],
@@ -12,6 +13,7 @@ export const crops = [
   },
   {
     name: "Allium",
+    key: "Allium",
     season: ["primavera"],
     growthTime: 7,
     growthStages: [2,2,2],
@@ -23,6 +25,7 @@ export const crops = [
   },
   {
     name: "Zanahoria",
+    key: "Zanahoria",
     season: ["primavera"],
     growthTime: 3,
     growthStages: [1,1],
@@ -34,6 +37,7 @@ export const crops = [
   },
   {
     name: "Arroz",
+    key: "Arroz",
     season: ["primavera"],
     growthTime: 8,
     growthStages: [2,2,3],
@@ -45,6 +49,7 @@ export const crops = [
   },
   {
     name: "Chirivía",
+    key: "Chirivía",
     season: ["primavera"],
     growthTime: 4,
     growthStages: [1,1,1],
@@ -56,6 +61,7 @@ export const crops = [
   },
   {
     name: "Col rizada",
+    key: "Col rizada",
     season: ["primavera"],
     growthTime: 6,
     growthStages: [2,2,1],
@@ -67,6 +73,7 @@ export const crops = [
   },
   {
     name: "Coliflor",
+    key: "Coliflor",
     season: ["primavera"],
     growthTime: 12,
     growthStages: [2,4,4,1],
@@ -78,6 +85,7 @@ export const crops = [
   },
   {
     name: "Fresa",
+    key: "Fresa",
     season: ["primavera"],
     growthTime: 8,
     regrowthTime: 4,
@@ -90,6 +98,7 @@ export const crops = [
   },
   {
     name: "Café",
+    key: "Café",
     season: ["primavera", "verano"],
     growthTime: 10,
     regrowthTime: 2,
@@ -102,6 +111,7 @@ export const crops = [
   },
   {
     name: "Judía",
+    key: "Judía",
     season: ["primavera"],
     growthTime: 10,
     regrowthTime: 3,
@@ -114,6 +124,7 @@ export const crops = [
   },
   {
     name: "Papa",
+    key: "Papa",
     season: ["primavera"],
     growthTime: 6,
     growthStages: [1,1,2,1],
@@ -125,6 +136,7 @@ export const crops = [
   },
   {
     name: "Ruibarbo",
+    key: "Ruibarbo",
     season: ["primavera"],
     growthTime: 13,
     growthStages: [1,2,2,3,4],
@@ -136,6 +148,7 @@ export const crops = [
   },
   {
     name: "Tulipán",
+    key: "Tulipán",
     season: ["primavera"],
     growthTime: 6,
     growthStages: [1,2,2],
@@ -147,6 +160,7 @@ export const crops = [
   },
   {
     name: "Amapola",
+    key: "Amapola",
     season: ["verano"],
     growthTime: 7,
     growthStages: [2,2,2],
@@ -158,6 +172,7 @@ export const crops = [
   },
   {
     name: "Arándano",
+    key: "Arándano",
     season: ["verano"],
     growthTime: 13,
     regrowthTime: 4,
@@ -170,6 +185,7 @@ export const crops = [
   },
   {
     name: "Carambola",
+    key: "Carambola",
     season: ["verano"],
     growthTime: 13,
     growthStages: [1,3,2,3,3],
@@ -181,6 +197,7 @@ export const crops = [
   },
   {
     name: "Chile",
+    key: "Chile",
     season: ["verano"],
     growthTime: 5,
     regrowthTime: 3,
@@ -193,6 +210,7 @@ export const crops = [
   },
   {
     name: "Girasol",
+    key: "Girasol",
     season: ["verano"],
     growthTime: 8,
     growthStages: [2,3,2],
@@ -204,6 +222,7 @@ export const crops = [
   },
   {
     name: "Lentejuela de Verano",
+    key: "Lentejuela de Verano",
     season: ["verano"],
     growthTime: 8,
     growthStages: [2,3,2],
@@ -215,6 +234,7 @@ export const crops = [
   },
   {
     name: "Calabaza amarilla",
+    key: "Calabaza amarilla",
     season: ["verano"],
     growthTime: 6,
     regrowthTime: 3,
@@ -227,6 +247,7 @@ export const crops = [
   },
   {
     name: "Lombarda",
+    key: "Lombarda",
     season: ["verano"],
     growthTime: 9,
     growthStages: [1,1,2,2,2],
@@ -238,6 +259,7 @@ export const crops = [
   },
   {
     name: "Lúpulo",
+    key: "Lúpulo",
     season: ["verano"],
     growthTime: 11,
     regrowthTime: 1,
@@ -250,6 +272,7 @@ export const crops = [
   },
   {
     name: "Maiz",
+    key: "Maiz",
     season: ["verano", "otoño"],
     growthTime: 14,
     regrowthTime: 4,
@@ -262,6 +285,7 @@ export const crops = [
   },
   {
     name: "Melón",
+    key: "Melón",
     season: ["verano"],
     growthTime: 12,
     growthStages: [2,3,3,3],
@@ -273,6 +297,7 @@ export const crops = [
   },
   {
     name: "Rábano",
+    key: "Rábano",
     season: ["verano"],
     growthTime: 6,
     growthStages: [1,1,2,1],
@@ -284,6 +309,7 @@ export const crops = [
   },
   {
     name: "Tomate",
+    key: "Tomate",
     season: ["verano"],
     growthTime: 11,
     regrowthTime: 4,
@@ -296,6 +322,7 @@ export const crops = [
   },
   {
     name: "Trigo",
+    key: "Trigo",
     season: ["verano", "otoño"],
     growthTime: 4,
     growthStages: [1,1,1],
@@ -307,6 +334,7 @@ export const crops = [
   },
   {
     name: "Alcachofa",
+    key: "Alcachofa",
     season: ["otoño"],
     growthTime: 8,
     growthStages: [1,2,1,2,1],
@@ -318,6 +346,7 @@ export const crops = [
   },
   {
     name: "Amaranto",
+    key: "Amaranto",
     season: ["otoño"],
     growthTime: 7,
     growthStages: [2,2,2],
@@ -329,6 +358,7 @@ export const crops = [
   },
   {
     name: "Berenjena",
+    key: "Berenjena",
     season: ["otoño"],
     growthTime: 5,
     regrowthTime: 5,
@@ -341,6 +371,7 @@ export const crops = [
   },
   {
     name: "Calabaza",
+    key: "Calabaza",
     season: ["otoño"],
     growthTime: 13,
     growthStages: [2,3,4,3],
@@ -352,6 +383,7 @@ export const crops = [
   },
   {
     name: "Col China",
+    key: "Col China",
     season: ["otoño"],
     growthTime: 4,
     growthStages: [1,1,1],
@@ -363,6 +395,7 @@ export const crops = [
   },
   {
     name: "Brocoli",
+    key: "Brocoli",
     season: ["otoño"],
     growthTime: 8,
     regrowthTime: 4,
@@ -375,6 +408,7 @@ export const crops = [
   },
   {
     name: "Grosella",
+    key: "Grosella",
     season: ["otoño"],
     growthTime: 7,
     regrowthTime: 5,
@@ -387,6 +421,7 @@ export const crops = [
   },
   {
     name: "Ñame",
+    key: "Ñame",
     season: ["otoño"],
     growthTime: 10,
     growthStages: [3,3,3],
@@ -398,6 +433,7 @@ export const crops = [
   },
   {
     name: "Remolacha",
+    key: "Remolacha",
     season: ["otoño"],
     growthTime: 6,
     growthStages: [1,2,2],
@@ -409,6 +445,7 @@ export const crops = [
   },
   {
     name: "Rosa Hada",
+    key: "Rosa Hada",
     season: ["otoño"],
     growthTime: 12,
     growthStages: [4,4,3],
@@ -420,6 +457,7 @@ export const crops = [
   },
   {
     name: "Uva",
+    key: "Uva",
     season: ["otoño"],
     growthTime: 10,
     regrowthTime: 3,
@@ -432,6 +470,7 @@ export const crops = [
   },
   {
     name: "Melón de polvo",
+    key: "Melón de polvo",
     season: ["invierno"],
     growthTime: 7,
     growthStages: [2,1,2,1],
@@ -443,6 +482,7 @@ export const crops = [
   },
   {
     name: "Baya de gema dulce",
+    key: "Baya de gema dulce",
     season: ["otoño"],
     growthTime: 24,
     growthStages: [2,4,6,6,6],
@@ -454,6 +494,7 @@ export const crops = [
   },
   {
     name: "Fruta Milenaria",
+    key: "Fruta Milenaria",
     season: ["primavera", "verano", "otoño"],
     growthTime: 28,
     regrowthTime: 7,
@@ -466,6 +507,7 @@ export const crops = [
   },
   {
     name: "Taro",
+    key: "Taro",
     season: ["verano"],
     growthTime: 10,
     growthStages: [2,3,4],
@@ -477,6 +519,7 @@ export const crops = [
   },
   {
     name: "Piña",
+    key: "Piña",
     season: ["verano"],
     growthTime: 14,
     regrowthTime: 7,
@@ -489,6 +532,7 @@ export const crops = [
   },
   {
     name: "Semillas silvestres (primavera)",
+    key: "Semillas silvestres (primavera)",
     season: ["primavera"],
     growthTime: 7,
     growthStages: [3, 4],
@@ -499,6 +543,7 @@ export const crops = [
   },
   {
     name: "Semillas silvestres (verano)",
+    key: "Semillas silvestres (verano)",
     season: ["verano"],
     growthTime: 7,
     growthStages: [3, 4],
@@ -509,6 +554,7 @@ export const crops = [
   },
   {
     name: "Semillas silvestres (otoño)",
+    key: "Semillas silvestres (otoño)",
     season: ["otoño"],
     growthTime: 7,
     growthStages: [3, 4],
@@ -519,6 +565,7 @@ export const crops = [
   },
   {
     name: "Semillas silvestres (invierno)",
+    key: "Semillas silvestres (invierno)",
     season: ["invierno"],
     growthTime: 7,
     growthStages: [3, 4],
