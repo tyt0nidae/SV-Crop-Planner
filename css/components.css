@@ -34,33 +34,31 @@ button:hover, select:hover {
   max-width: 95%;
   font-family: var(--font-family);
   color: var(--text-main);
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 0 8px #000;
 }
 
 .close-btn {
   float: right;
-  font-size: 24px;
   font-weight: bold;
-  color: var(--text-muted);
   cursor: pointer;
+  
 }
 
 .modal .close-btn {
-  font-size: 30px;
+  font-size: 35px;
   color: #333;
   position: absolute;
-  top: 10px;
+  top: 0px;
   right: 10px;
   cursor: pointer;
   z-index: 1000;
 }
 
-.modal .close-btn:hover {
-  color: red;
-}
-
 .modal .close-btn:focus {
   outline: none;
+}
+.close-btn:hover{
+  color: red;
 }
 
 .modal .modal-content {
@@ -74,11 +72,178 @@ button:hover, select:hover {
   width: 80%;
   max-width: 400px;
 }
+
 .label-content{
   display: flex;
   flex-direction: column;
 }
+
 label{
   padding-top:10px;
   padding-bottom: 10px;
+}
+
+#harvest-warning{
+  color: red; 
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+.delete-modal-content{
+  position: fixed;
+  display: flex;
+  border: 3px solid var(--accent);
+  align-items: center;
+  z-Index: 9999;
+  max-width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--bg-light);
+  background: #fdf1dc;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 0 8px #000;
+  text-align: center;
+}
+
+#delete-amount {
+  width: 50px;
+  padding: 4px;
+  text-align: center;
+  -moz-appearance: textfield;
+  font-size: 16px;
+  border: 2px solid #a86c3e;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  background-color: #fff9e6;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  background-color: #c97c45;
+  color: white;
+  border: 2px solid #5e3c23;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Press Start 2P', cursive;
+  align-items: center;
+}
+
+.modal-buttons button:hover {
+  background-color: #e89f61;
+}
+
+#delete-amount::-webkit-inner-spin-button,
+#delete-amount::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+ .delete-modal-content p{
+  margin: 6px 0;
+  text-align: center;
+ }
+
+#modal-list {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: #fdf6e3;
+  border: 2px solid #c2a76d;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  margin: 0 auto;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 8px ;
+}
+
+.crop-modal {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #fffaf2;
+  border: 2px solid #d3b679;
+  border-radius: 10px;
+  position: relative;
+}
+
+#modal-list{
+  display: flex;
+  gap: 6px;
+}
+
+#harvestable-crops-list,
+#planted-crops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.crop-modal.harvested {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.crop-icon-modal {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  padding: 0 7px;
+}
+
+.crop-name-modal {
+  font-weight: bold;
+  font-size: 14px;
+  color: #614d28;
+}
+
+.harvest-status {
+  margin-left: auto;
+  color: #2c7d2c;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.harvest-info {
+  margin-left: auto;
+  font-size: 12px;
+  color: #6c5c3c;
+}
+
+.harvest-checkbox {
+  accent-color: #c2a76d;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transform: scale(1.2);
+  margin: 13px 3px;
+}
+
+.delete-crop-btn {
+  left: 0;
+
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+  font-size: 30px;
+  color: #333;
+  padding: 0 3px;
+}
+
+.delete-crop-btn:hover {
+  color: #ff2222;
 }
