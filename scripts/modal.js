@@ -20,7 +20,7 @@ export function openPlantModal(day) {
           <div class="label-content">
             <label for="crop">Elige un cultivo:</label>
             <select id="crop">
-              ${availableCrops.map(([key, crop]) => `<option value="${key}">${crop.name}</option>`).join('')}
+              ${availableCrops.map(([key, crop]) => `<option value="${key}">${crop.name} (${crop.growthTime} días)</option>`).join('')}
             </select>
             <label for="fertilizer">Elige un fertilizante:</label>
             <select id="fertilizer"><option value="">Ninguno</option></select>
