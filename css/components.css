@@ -213,7 +213,6 @@ label{
 
 .harvest-status {
   margin-left: auto;
-  color: #2c7d2c;
   font-size: 12px;
   font-weight: bold;
 }
@@ -246,4 +245,19 @@ label{
 
 .delete-crop-btn:hover {
   color: #ff2222;
+}
+#harvestable-crops-list p {
+  font-size: 14px;
+  border: 2px solid #d3b679;
+  border-radius: 10px;
+  position: relative;
+  padding: 8px 12px;
+  margin: 0;
+}
+#planted-crops-list p {
+  font-size: 14px;border: 2px solid #d3b679;
+  border-radius: 10px;
+  position: relative;
+  padding: 8px 12px;
+  margin: 0;
 }
