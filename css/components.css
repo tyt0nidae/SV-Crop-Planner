@@ -26,12 +26,7 @@ button:hover, select:hover {
 }
 
 .modal-content {
-  background-color: var(--bg-light);
-  padding: 24px;
-  border-radius: 10px;
   border: 3px solid var(--accent);
-  width: 350px;
-  max-width: 95%;
   font-family: var(--font-family);
   color: var(--text-main);
   box-shadow: 0 0 8px #000;
@@ -70,7 +65,7 @@ button:hover, select:hover {
   padding: 20px;
   border-radius: 10px;
   width: 80%;
-  max-width: 400px;
+  max-width: 410px;
 }
 
 .label-content{
@@ -79,7 +74,7 @@ button:hover, select:hover {
 }
 
 label{
-  padding-top:10px;
+  padding-top:8px;
   padding-bottom: 10px;
 }
 
@@ -100,7 +95,6 @@ label{
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
-  font-family: 'Press Start 2P', cursive;
   flex-direction: column;
   gap: 5px;
   background-color: var(--bg-light);
@@ -139,7 +133,6 @@ label{
   font-size: 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  font-family: 'Press Start 2P', cursive;
   align-items: center;
 }
 
@@ -168,7 +161,8 @@ label{
   max-width: 420px;
   margin: 0 auto;
   font-family: 'Press Start 2P', cursive;
-  margin-bottom: 8px ;
+  margin: 10px 0;
+  gap: 6px;
 }
 
 .crop-modal {
@@ -179,11 +173,6 @@ label{
   border: 2px solid #d3b679;
   border-radius: 10px;
   position: relative;
-}
-
-#modal-list{
-  display: flex;
-  gap: 6px;
 }
 
 #harvestable-crops-list,
@@ -251,13 +240,48 @@ label{
   border: 2px solid #d3b679;
   border-radius: 10px;
   position: relative;
-  padding: 8px 12px;
-  margin: 0;
+  padding: 14px 12px;
+  font-family: var(--font-family);
 }
+
 #planted-crops-list p {
   font-size: 14px;border: 2px solid #d3b679;
   border-radius: 10px;
   position: relative;
-  padding: 8px 12px;
+  padding: 14px 12px;
+  font-family: var(--font-family);
+}
+
+.crop-amount-label{
+  display:flex;
+  align-items: center;
+  margin-top: 8px;
+  text-align: center;
+}
+.crop-amount{
+  display:flex;
+  align-items: center;
+  text-align: center;
+}
+#crop-amount{
+  width: 50px;
+  padding: 4px;
+  -moz-appearance: textfield;
+  font-size: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--button-bg);
+  display:flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+#crop-amount::-webkit-inner-spin-button,
+#crop-amount::-webkit-outer-spin-button {
+  -webkit-appearance: none;
   margin: 0;
+}
+
+#plant-section p{
+ margin: 0;
 }

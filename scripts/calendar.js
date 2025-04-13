@@ -7,6 +7,30 @@ import { events } from './events-data.js';
 let calendarSeason = currentSeason;
 
 export function clearMonth() {
+  const cropsInMonth = plantedCrops[calendarSeason];
+  
+  for (const [day, entries] of Object.entries(cropsInMonth)) {
+    entries.forEach(entry => {
+      const cropData = crops[entry.cropKey];
+      const fertilizer = entry.fertilizer || "none";
+      const plantedDay = entry.plantedDayNumber ?? parseInt(day.split(" ")[1]);
+      const growthTime = Math.ceil(cropData.growthTime * (1 - (cropData.fertilizers?.[fertilizer] || 0)));
+      const harvestDay = plantedDay + growthTime;
+
+      const harvestKey = `harvested-${cropData.name}-${fertilizer}-${harvestDay}`;
+      localStorage.removeItem(harvestKey);
+
+      if (cropData.regrowthTime) {
+        let regrowthDay = harvestDay + cropData.regrowthTime;
+        while (regrowthDay <= 28) {
+          const regrowthKey = `harvested-${cropData.name}-${fertilizer}-${regrowthDay}-regrowth`;
+          localStorage.removeItem(regrowthKey);
+          regrowthDay += cropData.regrowthTime;
+        }
+      }
+    });
+  }
+
   plantedCrops[calendarSeason] = {};
   savePlantedCrops();
   createCalendar(calendarSeason);
@@ -36,8 +60,15 @@ export function createCalendar(season) {
     calendarHTML += `
       <div class="calendar-day" data-day="${day}">
         <div class="day-header"><span>${day}</span></div>
-        <div class="crop-info">
-        <div class="crop-more-container"><button class="crop-more">+</div></div>
+        <div class="crop-icons">
+        <div class="crop-info-container">
+        <button class="flecha-left">&lt;</button>
+          <div class="crop-info"></div>
+          <button class="flecha-left">&lt;</button>
+          <button class="flecha-right">&gt;</button>
+        </div>
+        <div class="crop-more-container"><button class="crop-more">+</div>
+        </div>
         <div class="event-icons">${eventIcons}</div>
       </div>
     `;
@@ -48,6 +79,8 @@ export function createCalendar(season) {
 
   renderAllCrops(season);
   addCalendarListeners();
+  manageArrows();
+
 }
 
 function addCalendarListeners() {
@@ -126,68 +159,65 @@ function createCropTag(crop, plantDay, harvestDay, i, totalDay, stageIdx) {
   return tag;
 }
 
-function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, current) {
-  let regrowthDay = harvestDay + crop.regrowthTime;
+function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, current) { 
+  const initialHarvestDay = harvestDay;
+  const regrowthTime = crop.regrowthTime;
+  const maxDay = seasonOrder.length * 28;
+  const plantedSeason = cropData.plantedSeason || current;
+  const fertilizer = cropData.fertilizer || "none";
 
-  while (regrowthDay <= seasonOrder.length * 28) {
-    const { season, day } = getSeasonAndDay(regrowthDay);
+  const allHarvestDays = [initialHarvestDay];
 
-    const prevSeasonIdx = seasonOrder.indexOf(season) - 1;
-    const prevSeason = seasonOrder[prevSeasonIdx >= 0 ? prevSeasonIdx : seasonOrder.length - 1];
+  if (regrowthTime) {
+    let nextDay = initialHarvestDay + regrowthTime;
+    while (nextDay <= maxDay) {
+      const { season } = getSeasonAndDay(nextDay);
+      const prevSeasonIdx = seasonOrder.indexOf(season) - 1;
+      const prevSeason = seasonOrder[prevSeasonIdx >= 0 ? prevSeasonIdx : seasonOrder.length - 1];
+      if (crop.diesAtEndOf?.includes(prevSeason)) break;
+      allHarvestDays.push(nextDay);
+      nextDay += regrowthTime;
+    }
+  }
 
-    // Si la cosecha muere al final de la temporada, salimos
-    if (crop.diesAtEndOf?.includes(prevSeason)) break;
+  for (let i = 0; i < allHarvestDays.length; i++) {
+    const dayNum = allHarvestDays[i];
+    const isRegrowth = i > 0;
+    const { season, day } = getSeasonAndDay(dayNum);
 
-    // Si estamos en la temporada actual, mostramos recosecha
-    if (season === current) {
-      const key = `${season}-${day}-${crop.key}-re-${cropData.plantedSeason || current}-${cropData.plantDay}`;
-      if (!printed.has(key)) {
-        const cell = calendarCells[`Día ${day}`];
-        if (cell) {
-          const tag = document.createElement("div");
-          tag.className = "crop-tag";
-          tag.innerHTML = `
-            <div class="crop-info-wrapper">
-              <img src="${crop.harvestIcon}" class="crop-icon" alt="${crop.name}" />
-              <div class="crop-details">
-                <span class="crop-name">${crop.name}</span>
-                <span class="growth-status">Listo para recosecha</span>
-              </div>
+    if (season !== current) continue;
+
+    const type = isRegrowth ? "re" : "harvest";
+    const key = `${season}-${day}-${crop.key}-${type}-${plantedSeason}-${cropData.plantDay}`;
+    const cropKey = `${crop.name}-${fertilizer}-${day}${isRegrowth ? "-regrowth" : ""}`;
+    const isHarvested = localStorage.getItem(`harvested-${cropKey}`) === "true";
+
+    if (!printed.has(key)) {
+      const cell = calendarCells[`Día ${day}`];
+      if (cell) {
+        const tag = document.createElement("div");
+        tag.className = "crop-tag";
+        tag.innerHTML = `
+          <div class="crop-info-wrapper">
+            ${!isHarvested ? `<span class="tooltip-icon tooltip-alert">!</span>` : ""} <!-- Tooltip solo si no está cosechado -->
+            <img src="${crop.harvestIcon}" class="crop-icon" alt="${crop.name}" />
+            <div class="crop-details">
+              <span class="crop-name">${crop.name}</span>
+              <span class="growth-status">Listo para ${isRegrowth ? "recosecha" : "cosecha"}</span>
             </div>
-          `;
-          cell.appendChild(tag);
-          printed.add(key);
-        }
+          </div>
+        `;
+        tag.setAttribute("data-cropkey", cropKey);
+        cell.appendChild(tag);
+        printed.add(key);
       }
     }
 
-    // Incrementamos el día de recosecha
-    regrowthDay += crop.regrowthTime;
-  }
-
-  // Si la cosecha ya está lista después de un ciclo de crecimiento
-  if (harvestDay <= seasonOrder.length * 28) {
-    const { season, day } = getSeasonAndDay(harvestDay);
-
-    if (season === current) {
-      const key = `${season}-${day}-${crop.key}-harvest-${cropData.plantedSeason || current}-${cropData.plantDay}`;
-      if (!printed.has(key)) {
-        const cell = calendarCells[`Día ${day}`];
-        if (cell) {
-          const tag = document.createElement("div");
-          tag.className = "crop-tag";
-          tag.innerHTML = `
-            <div class="crop-info-wrapper">
-              <img src="${crop.harvestIcon}" class="crop-icon" alt="${crop.name}" />
-              <div class="crop-details">
-                <span class="crop-name">${crop.name}</span>
-                <span class="growth-status">Listo para cosecha</span>
-              </div>
-            </div>
-          `;
-          cell.appendChild(tag);
-          printed.add(key);
-        }
+    const calendarTag = document.querySelector(`[data-cropkey="${cropKey}"]`);
+    if (calendarTag) {
+      const tooltipIcon = calendarTag.querySelector(".tooltip-icon");
+      if (tooltipIcon) {
+        tooltipIcon.style.display = isHarvested ? "none" : "inline";
       }
     }
   }
@@ -264,4 +294,52 @@ async function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, 
 
 export function getCalendarSeason() {
   return calendarSeason;
+}
+
+function manageArrows() {
+  const cropInfoContainers = document.querySelectorAll('.crop-info-container');
+  
+  cropInfoContainers.forEach((container) => {
+    const cropInfo = container.querySelector('.crop-info');
+    const flechaLeft = container.querySelector('.flecha-left');
+    const flechaRight = container.querySelector('.flecha-right');
+    const cropTags = Array.from(cropInfo.querySelectorAll('.crop-tag'));
+
+    let currentGroupIndex = 0;
+    const visibleCount = 3;
+
+    const showGroup = (startIndex) => {
+      cropTags.forEach((tag, index) => {
+        tag.style.display = (index >= startIndex && index < startIndex + visibleCount) ? 'block' : 'none';
+      });
+
+      flechaLeft.style.display = startIndex > 0 ? 'block' : 'none';
+
+      flechaRight.style.display = (startIndex + visibleCount < cropTags.length) ? 'block' : 'none';
+
+      if (cropTags.length <= 3) {
+        cropInfo.style.justifyContent = 'flex-start';
+        container.style.flex = '0';
+      } else {
+        cropInfo.style.justifyContent = 'center';
+        container.style.flex = '1';
+      }
+    };
+
+    showGroup(currentGroupIndex);
+
+    flechaLeft.addEventListener('click', () => {
+      if (currentGroupIndex > 0) {
+        currentGroupIndex--;
+        showGroup(currentGroupIndex);
+      }
+    });
+
+    flechaRight.addEventListener('click', () => {
+      if (currentGroupIndex + visibleCount < cropTags.length) {
+        currentGroupIndex++;
+        showGroup(currentGroupIndex);
+      }
+    });
+  });
 }

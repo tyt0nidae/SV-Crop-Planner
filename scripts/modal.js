@@ -17,15 +17,19 @@ export function openPlantModal(day) {
       <div class="modal-content">
         <span class="close-btn">&times;</span>
         <section id="plant-section">
+        <p>Día seleccionado: <span id="selected-day">${day}</span></p>
           <div class="label-content">
             <label for="crop">Elige un cultivo:</label>
             <select id="crop">
               ${availableCrops.map(([key, crop]) => `<option value="${key}">${crop.name} (${crop.growthTime} días)</option>`).join('')}
             </select>
+            <div class="crop-amount-label">
+            <label for="crop-amount">Cantidad:</label>
+            <input type="number" id="crop-amount" min="1" value="1"/>
+            </div>
             <label for="fertilizer">Elige un fertilizante:</label>
             <select id="fertilizer"><option value="">Ninguno</option></select>
           </div>
-          <p>Día seleccionado: <span id="selected-day">${day}</span></p>
           <p id="harvest-warning"></p>
           <div id="modal-list">
           <div id="planted-crops-list"></div>
@@ -92,20 +96,24 @@ export function openPlantModal(day) {
     const cropKey = cropSelect.value;
     const crop = crops[cropKey];
     const season = getCalendarSeason();
+    const amount = parseInt(document.getElementById("crop-amount").value) || 1;
   
     if (!plantedCrops[season][day]) {
       plantedCrops[season][day] = [];
     }
   
-    const plantedData = { cropKey, plantedSeason: season, fertilizer: selectedFertilizer };
-    plantedCrops[season][day].push(plantedData);
+    for (let i = 0; i < amount; i++) {
+      plantedCrops[season][day].push({
+        cropKey,
+        plantedSeason: season,
+        fertilizer: selectedFertilizer,
+      });
+    }
   
     savePlantedCrops();
     createCalendar(season);
-  
     renderPlantedCropsList(day, season);
   });
-  
 
   updateFertilizerOptions(crops[cropSelect.value]);
   updateWarning();
@@ -187,17 +195,34 @@ export function renderPlantedCropsList(day, season) {
             entryItem.cropKey === cropKey &&
             (entryItem.fertilizer || "") === fertilizer
           ) {
+            const plantedDay = entryItem.plantedDayNumber ?? parseInt(day.split(" ")[1]);
+            const cropData = crops[cropKey];
+            const fertilizerBoost = cropData.fertilizers?.[fertilizer] || 0;
+            const growthTime = Math.ceil(cropData.growthTime * (1 - fertilizerBoost));
+            const harvestDay = plantedDay + growthTime;
+            const harvestKey = `${cropData.name}-${fertilizer || "none"}-${harvestDay}`;
+            localStorage.removeItem(`harvested-${harvestKey}`);
+    
+            if (cropData.regrowthTime) {
+              let regrowthDay = harvestDay + cropData.regrowthTime;
+              while (regrowthDay <= 28) {
+                const regrowthKey = `${cropData.name}-${fertilizer || "none"}-${regrowthDay}-regrowth`;
+                localStorage.removeItem(`harvested-${regrowthKey}`);
+                regrowthDay += cropData.regrowthTime;
+              }
+            }
+    
             eliminados++;
             return false;
           }
           return true;
         });
-
+    
         savePlantedCrops();
         createCalendar(getCalendarSeason());
         renderPlantedCropsList(day, season);
       });
-    });
+    });    
   });
 }
 
@@ -261,10 +286,30 @@ function renderHarvestableCropsList(day, season) {
           groupedHarvestable[key] = {
             crop,
             fertilizer: entry.fertilizer,
-            count: 0
+            count: 0,
+            isRegrowth: false
           };
         }
         groupedHarvestable[key].count++;
+      }
+
+      if (crop.regrowthTime) {
+        let regrowthDay = harvestDay + crop.regrowthTime;
+        while (regrowthDay <= todayNumber) {
+          if (regrowthDay === todayNumber) {
+            const regrowthKey = `${entry.cropKey}-${entry.fertilizer || "none"}-regrowth-${regrowthDay}`;
+            if (!groupedHarvestable[regrowthKey]) {
+              groupedHarvestable[regrowthKey] = {
+                crop,
+                fertilizer: entry.fertilizer,
+                count: 0,
+                isRegrowth: true
+              };
+            }
+            groupedHarvestable[regrowthKey].count++;
+          }
+          regrowthDay += crop.regrowthTime;
+        }
       }
     }
   }
@@ -276,11 +321,11 @@ function renderHarvestableCropsList(day, season) {
     return;
   }
 
-  for (const { crop, fertilizer, count } of harvestableEntries) {
+  for (const { crop, fertilizer, count, isRegrowth } of harvestableEntries) {
     const item = document.createElement("div");
     item.className = "crop-modal";
 
-    const cropKey = `${crop.name}-${fertilizer || "none"}-${todayNumber}`;
+    const cropKey = `${crop.name}-${fertilizer || "none"}-${todayNumber}${isRegrowth ? "-regrowth" : ""}`;
     const isChecked = localStorage.getItem(`harvested-${cropKey}`) === "true";
 
     item.innerHTML = `
@@ -288,19 +333,29 @@ function renderHarvestableCropsList(day, season) {
       <img class="crop-icon-modal" src="${crop.icon}" alt="${crop.name}">
       <span class="crop-name-modal">${crop.name}${count > 1 ? ` (${count})` : ""}</span>
       ${fertilizer ? `<span class="fertilizer-info">(Fertilizante: ${fertilizer})</span>` : ""}
-      <span class="harvest-status">¡Listo para cosechar!</span>
+      <span class="harvest-status">${isRegrowth ? "¡Listo para recosecha!" : "¡Listo para cosechar!"}</span>
     `;
 
     if (isChecked) item.classList.add("harvested");
 
     const checkbox = item.querySelector(".harvest-checkbox");
+
     checkbox.addEventListener("change", () => {
       const checked = checkbox.checked;
       localStorage.setItem(`harvested-${cropKey}`, checked);
+
       if (checked) {
         item.classList.add("harvested");
       } else {
         item.classList.remove("harvested");
+      }
+
+      const calendarTag = document.querySelector(`[data-cropkey="${cropKey}"]`);
+      if (calendarTag) {
+        const tooltipIcon = calendarTag.querySelector(".tooltip-icon");
+        if (tooltipIcon) {
+          tooltipIcon.style.display = checked ? "none" : "inline";
+        }
       }
     });
 
