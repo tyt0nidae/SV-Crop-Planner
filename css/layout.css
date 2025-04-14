@@ -5,7 +5,7 @@ h1 {
   color: #e2c256;
   text-shadow: 2px 2px 0 #744d1e;
   display: inline-block;
-  margin: 30px auto;
+  margin: 15px auto;
   text-align: center;
 }
 
@@ -38,41 +38,42 @@ h2 {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-auto-rows: minmax(120px, auto);
-  gap: 10px;
-  border: 8px double var(--border-color);
   padding: 8px;
-  background-color: #fff8e1;
-  box-shadow: 0 0 12px rgba(0,0,0,0.2);
   width: 86%;
   height: 620px;
+  gap: 8px;
+  border: 10px groove #b88645;
+  background-color: #f3e4b1;
+  box-shadow: inset 0 0 8px #a97442, 0 0 14px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
 }
 
 .calendar-day {
-  background-color: var(--bg-light);
-  border: 2px solid var(--border-color);
   border-radius: 8px;
   padding: 6px;
   min-height: 100px;
   position: relative;
-  transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background-color: #fff2c5;
+  border: 3px solid #a67c52;
+  transition: transform 0.2s ease;
+  font-family: 'Verdana', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .calendar-day:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  background-color: #ffe6a7;
 }
 
 .day-header {
   font-weight: bold;
   border-bottom: 2px solid #ccc;
   color: var(--text-main);
-  border-color: #a67c52;
+  color: #5c3b1e;
+  text-shadow: 1px 1px 0 #fff;
+  border-bottom: 2px dashed #c29d6b;
 }
-
-
-
-
-

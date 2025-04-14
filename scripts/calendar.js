@@ -159,17 +159,27 @@ function createCropTag(crop, plantDay, harvestDay, i, totalDay, stageIdx) {
   return tag;
 }
 
-function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, current) { 
+function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, current) {
   const initialHarvestDay = harvestDay;
   const regrowthTime = crop.regrowthTime;
   const maxDay = seasonOrder.length * 28;
   const plantedSeason = cropData.plantedSeason || current;
   const fertilizer = cropData.fertilizer || "none";
 
-  const allHarvestDays = [initialHarvestDay];
+  let adjustedHarvestDay = initialHarvestDay;
+
+  if (fertilizer !== "none") {
+    const growthTime = crop.growthTime;
+    const growthFactor = crop.fertilizers[fertilizer] || 0;
+    const adjustedGrowthTime = Math.floor(growthTime * (1 - growthFactor));
+
+    adjustedHarvestDay = 1 + adjustedGrowthTime;
+  }
+
+  const allHarvestDays = [adjustedHarvestDay];
 
   if (regrowthTime) {
-    let nextDay = initialHarvestDay + regrowthTime;
+    let nextDay = adjustedHarvestDay + regrowthTime;
     while (nextDay <= maxDay) {
       const { season } = getSeasonAndDay(nextDay);
       const prevSeasonIdx = seasonOrder.indexOf(season) - 1;
@@ -199,7 +209,7 @@ function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, curr
         tag.className = "crop-tag";
         tag.innerHTML = `
           <div class="crop-info-wrapper">
-            ${!isHarvested ? `<span class="tooltip-icon tooltip-alert">!</span>` : ""} <!-- Tooltip solo si no está cosechado -->
+            ${!isHarvested ? `<span class="tooltip-icon tooltip-alert">!</span>` : ""}
             <img src="${crop.harvestIcon}" class="crop-icon" alt="${crop.name}" />
             <div class="crop-details">
               <span class="crop-name">${crop.name}</span>
@@ -244,7 +254,7 @@ function handlePlanting(crop, plantDay, cropData, printed, calendarCells, curren
             <img src="${crop.icon}" class="crop-icon" alt="${crop.name}"/>
             <div class="crop-details">
               <span class="crop-name">${crop.name}</span>
-              <span class="growth-status">Plantado: ${capitalizeFirstLetter(crop.plantedSeason || calendarSeason)} ${plantDay}<br/>Cosecha: ${getStardewDateFromAbsoluteDay(harvestDay)}</span>
+              <span class="growth-status">Plantado: ${capitalizeFirstLetter(crop.plantedSeason || calendarSeason)} ${plantDay}<br/>Cosecha: ${getStardewDateFromAbsoluteDay(Math.floor(harvestDay))}</span>
             </div>
           </div>
         `;
@@ -256,9 +266,16 @@ function handlePlanting(crop, plantDay, cropData, printed, calendarCells, curren
   }
 }
 
-async function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, printed, calendarCells, displayedIcons) {
+async function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, printed, calendarCells, displayedIcons, fertilizer) {
   let growthStageIndex = 0;
   let currentGrowthTime = 0;
+
+  if (fertilizer) {
+    const fertilizerBoost = crop.fertilizers?.[fertilizer] || 0;
+    growthTime = Math.floor(growthTime * (1 - fertilizerBoost));
+  }
+
+  growthTime = Math.floor(growthTime); 
 
   for (let i = 0; i < growthTime; i++) {
     const totalDay = absoluteStart + i + 1;
@@ -289,7 +306,6 @@ async function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, 
       }
     }
   }
-  
 }
 
 export function getCalendarSeason() {

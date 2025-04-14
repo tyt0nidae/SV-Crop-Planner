@@ -6,7 +6,7 @@ export const crops = [
     growthTime: 4,
     growthStages: [1,1,1],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Garlic_Seeds.png",
     harvestIcon: "icons/crop-icons/Garlic_Stage_5.png",
     growthIcons: ["icons/crop-icons/Garlic_Stage_2.png","icons/crop-icons/Garlic_Stage_3.png","icons/crop-icons/Garlic_Stage_4.png"]
@@ -18,7 +18,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [2,2,2],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Jazz_Seeds.png",
     harvestIcon: "icons/crop-icons/Blue_Jazz_Stage_5.png",
     growthIcons: ["icons/crop-icons/Blue_Jazz_Stage_2.png", "icons/crop-icons/Blue_Jazz_Stage_3.png", "icons/crop-icons/Blue_Jazz_Stage_4.png",]
@@ -30,7 +30,7 @@ export const crops = [
     growthTime: 3,
     growthStages: [1,1],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Carrot_Seeds.png",
     harvestIcon: "icons/crop-icons/Carrot_Stage_4.png",
     growthIcons: ["icons/crop-icons/Carrot_Stage_2.png","icons/crop-icons/Carrot_Stage_3.png",]
@@ -42,7 +42,7 @@ export const crops = [
     growthTime: 8,
     growthStages: [2,2,3],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Cerca a agua":0.3},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Cerca a agua":0.3, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Rice_Shoot.png",
     harvestIcon: "icons/crop-icons/Unmilled_Rice_Stage_5.png",
     growthIcons: ["icons/crop-icons/Unmilled_Rice_Stage_2.png","icons/crop-icons/Unmilled_Rice_Stage_3.png","icons/crop-icons/Unmilled_Rice_Stage_4.png"]
@@ -54,7 +54,7 @@ export const crops = [
     growthTime: 4,
     growthStages: [1,1,1],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Parsnip_Seeds.png",
     harvestIcon: "icons/crop-icons/Parsnip_Stage_5.png",
     growthIcons: ["icons/crop-icons/Parsnip_Stage_2.png", "icons/crop-icons/Parsnip_Stage_3.png", "icons/crop-icons/Parsnip_Stage_4.png"]
@@ -66,7 +66,7 @@ export const crops = [
     growthTime: 6,
     growthStages: [2,2,1],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Kale_Seeds.png",
     harvestIcon: "icons/crop-icons/Kale_Stage_5.png",
     growthIcons: ["icons/crop-icons/Kale_Stage_2.png", "icons/crop-icons/Kale_Stage_3.png","icons/crop-icons/Kale_Stage_4.png"]
@@ -78,7 +78,7 @@ export const crops = [
     growthTime: 12,
     growthStages: [2,4,4,1],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Cauliflower_Seeds.png",
     harvestIcon: "icons/crop-icons/Cauliflower_Stage_6.png",
     growthIcons: ["icons/crop-icons/Cauliflower_Stage_2.png", "icons/crop-icons/Cauliflower_Stage_3.png", "icons/crop-icons/Cauliflower_Stage_4.png", "icons/crop-icons/Cauliflower_Stage_5.png"]
@@ -91,7 +91,7 @@ export const crops = [
     regrowthTime: 4,
     growthStages: [1,2,2,2],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Strawberry_Seeds.png",
     harvestIcon: "icons/crop-icons/Strawberry_Stage_6.png",
     growthIcons: ["icons/crop-icons/Strawberry_Stage_2.png", "icons/crop-icons/Strawberry_Stage_3.png", "icons/crop-icons/Strawberry_Stage_4.png", "icons/crop-icons/Strawberry_Stage_5.png"]
@@ -104,7 +104,7 @@ export const crops = [
     regrowthTime: 2,
     growthStages: [2, 2, 3, 2],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Coffee_Bean.png",
     harvestIcon: "icons/crop-icons/Coffee_Stage_6.png",
     growthIcons: ["icons/crop-icons/Coffee_Stage_2.png", "icons/crop-icons/Coffee_Stage_3.png", "icons/crop-icons/Coffee_Stage_4.png", "icons/crop-icons/Coffee_Stage_5.png"]
@@ -117,7 +117,7 @@ export const crops = [
     regrowthTime: 3,
     growthStages: [1,1,3,4],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Bean_Starter.png",
     harvestIcon: "icons/crop-icons/Green_Bean_Stage_7.png",
     growthIcons: ["icons/crop-icons/Green_Bean_Stage_3.png", "icons/crop-icons/Green_Bean_Stage_4.png", "icons/crop-icons/Green_Bean_Stage_5.png", "icons/crop-icons/Green_Bean_Stage_6.png", ]
@@ -129,7 +129,7 @@ export const crops = [
     growthTime: 6,
     growthStages: [1,1,2,1],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Potato_Seeds.png",
     harvestIcon: "icons/crop-icons/Potato_Stage_6.png",
     growthIcons: ["icons/crop-icons/Potato_Stage_2.png", "icons/crop-icons/Potato_Stage_3.png", "icons/crop-icons/Potato_Stage_4.png", "icons/crop-icons/Potato_Stage_5.png", ]
@@ -141,7 +141,7 @@ export const crops = [
     growthTime: 13,
     growthStages: [1,2,2,3,4],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Rhubarb_Seeds.png",
     harvestIcon: "icons/crop-icons/Rhubarb_Stage_6.png",
     growthIcons: ["icons/crop-icons/Rhubarb_Stage_1.png", "icons/crop-icons/Rhubarb_Stage_2.png", "icons/crop-icons/Rhubarb_Stage_3.png", "icons/crop-icons/Rhubarb_Stage_4.png", "icons/crop-icons/Rhubarb_Stage_5.png"]
@@ -153,7 +153,7 @@ export const crops = [
     growthTime: 6,
     growthStages: [1,2,2],
     diesAtEndOf: ["primavera"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Tulip_Bulb.png",
     harvestIcon: "icons/crop-icons/Tulip_Stage_6.png",
     growthIcons: ["icons/crop-icons/Tulip_Stage_2.png", "icons/crop-icons/Tulip_Stage_3.png", "icons/crop-icons/Tulip_Stage_4.png"]
@@ -165,7 +165,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [2,2,2],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Poppy_Seeds.png",
     harvestIcon: "icons/crop-icons/Poppy_Stage_6.png",
     growthIcons: ["icons/crop-icons/Poppy_Stage_2.png", "icons/crop-icons/Poppy_Stage_3.png", "icons/crop-icons/Poppy_Stage_4.png"]
@@ -178,7 +178,7 @@ export const crops = [
     regrowthTime: 4,
     growthStages: [3,3,4,2],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Blueberry_Seeds.png",
     harvestIcon: "icons/crop-icons/Blueberry_Stage_6.png",
     growthIcons: ["icons/crop-icons/Blueberry_Stage_2.png", "icons/crop-icons/Blueberry_Stage_3.png", "icons/crop-icons/Blueberry_Stage_4.png", "icons/crop-icons/Blueberry_Stage_5.png"]
@@ -190,7 +190,7 @@ export const crops = [
     growthTime: 13,
     growthStages: [1,3,2,3,3],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Starfruit_Seeds.png",
     harvestIcon: "icons/crop-icons/Starfruit_Stage_6.png",
     growthIcons: ["icons/crop-icons/Starfruit_Stage_1.png", "icons/crop-icons/Starfruit_Stage_2.png", "icons/crop-icons/Starfruit_Stage_3.png", "icons/crop-icons/Starfruit_Stage_4.png", "icons/crop-icons/Starfruit_Stage_5.png"]
@@ -203,7 +203,7 @@ export const crops = [
     regrowthTime: 3,
     growthStages: [1,1,1,1],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Pepper_Seeds.png",
     harvestIcon: "icons/crop-icons/Hot_Pepper_Stage_5.png",
     growthIcons: ["icons/crop-icons/Hot_Pepper_Stage_2.png", "icons/crop-icons/Hot_Pepper_Stage_3.png", "icons/crop-icons/Hot_Pepper_Stage_4.png", "icons/crop-icons/Hot_Pepper_Stage_4b.png"]
@@ -215,7 +215,7 @@ export const crops = [
     growthTime: 8,
     growthStages: [2,3,2],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Sunflower.png",
     harvestIcon: "icons/crop-icons/Sunflower_Stage_5.png",
     growthIcons: ["icons/crop-icons/Sunflower_Stage_2.png", "icons/crop-icons/Sunflower_Stage_3.png", "icons/crop-icons/Sunflower_Stage_4.png"]
@@ -227,7 +227,7 @@ export const crops = [
     growthTime: 8,
     growthStages: [2,3,2],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Spangle_Seeds.png",
     harvestIcon: "icons/crop-icons/Summer_Spangle_Stage_5.png",
     growthIcons: ["icons/crop-icons/Summer_Spangle_Stage_2.png", "icons/crop-icons/Summer_Spangle_Stage_3.png", "icons/crop-icons/Summer_Spangle_Stage_4.png"]
@@ -240,7 +240,7 @@ export const crops = [
     regrowthTime: 3,
     growthStages: [1,1,2,1],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Summer_Squash_Seeds.png",
     harvestIcon: "icons/crop-icons/Summer_Squash_Stage_6.png",
     growthIcons: ["icons/crop-icons/Summer_Squash_Stage_2.png", "icons/crop-icons/Summer_Squash_Stage_3.png", "icons/crop-icons/Summer_Squash_Stage_4.png", "icons/crop-icons/Summer_Squash_Stage_5.png"]
@@ -252,7 +252,7 @@ export const crops = [
     growthTime: 9,
     growthStages: [1,1,2,2,2],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Red_Cabbage_Seeds.png",
     harvestIcon: "icons/crop-icons/Red_Cabbage_Stage_6.png",
     growthIcons: ["icons/crop-icons/Red_Cabbage_Stage_1.png","icons/crop-icons/Red_Cabbage_Stage_2.png", "icons/crop-icons/Red_Cabbage_Stage_3.png", "icons/crop-icons/Red_Cabbage_Stage_4.png", "icons/crop-icons/Red_Cabbage_Stage_5.png"]
@@ -265,7 +265,7 @@ export const crops = [
     regrowthTime: 1,
     growthStages: [1,2,7],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Hops_Starter.png",
     harvestIcon: "icons/crop-icons/Hops_Stage_7.png",
     growthIcons: ["icons/crop-icons/Hops_Stage_3.png", "icons/crop-icons/Hops_Stage_4.png", "icons/crop-icons/Hops_Stage_5.png"]
@@ -278,7 +278,7 @@ export const crops = [
     regrowthTime: 4,
     growthStages: [1,3,3,3,3],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Corn_Seeds.png",
     harvestIcon: "icons/crop-icons/Corn_Stage_6.png",
     growthIcons: ["icons/crop-icons/Corn_Stage_1.png", "icons/crop-icons/Corn_Stage_3.png", "icons/crop-icons/Corn_Stage_4.png", "icons/crop-icons/Corn_Stage_5.png"]
@@ -290,7 +290,7 @@ export const crops = [
     growthTime: 12,
     growthStages: [2,3,3,3],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Melon_Seeds.png",
     harvestIcon: "icons/crop-icons/Melon_Stage_6.png",
     growthIcons: ["icons/crop-icons/Melon_Stage_6.png", "icons/crop-icons/Melon_Stage_6.png", "icons/crop-icons/Melon_Stage_6.png", "icons/crop-icons/Melon_Stage_6.png"]
@@ -302,7 +302,7 @@ export const crops = [
     growthTime: 6,
     growthStages: [1,1,2,1],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Radish_Seeds.png",
     harvestIcon: "icons/crop-icons/Radish_Stage_5.png",
     growthIcons: ["icons/crop-icons/Radish_Stage_1.png", "icons/crop-icons/Radish_Stage_2.png", "icons/crop-icons/Radish_Stage_3.png", "icons/crop-icons/Radish_Stage_4.png"]
@@ -315,7 +315,7 @@ export const crops = [
     regrowthTime: 4,
     growthStages: [1,2,2,2,3],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Tomato_Seeds.png",
     harvestIcon: "icons/crop-icons/Tomato_Stage_6.png",
     growthIcons: ["icons/crop-icons/Tomato_Stage_1.png", "icons/crop-icons/Tomato_Stage_2.png", "icons/crop-icons/Tomato_Stage_3.png", "icons/crop-icons/Tomato_Stage_4.png", "icons/crop-icons/Tomato_Stage_5.png"]
@@ -327,7 +327,7 @@ export const crops = [
     growthTime: 4,
     growthStages: [1,1,1],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Wheat_Seeds.png",
     harvestIcon: "icons/crop-icons/Wheat_Stage_5.png",
     growthIcons: ["icons/crop-icons/Wheat_Stage_2.png", "icons/crop-icons/Wheat_Stage_3.png", "icons/crop-icons/Wheat_Stage_4.png"]
@@ -339,7 +339,7 @@ export const crops = [
     growthTime: 8,
     growthStages: [1,2,1,2,1],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Artichoke_Seeds.png",
     harvestIcon: "icons/crop-icons/Artichoke_Stage_6.png",
     growthIcons: ["icons/crop-icons/Artichoke_Stage_1.png", "icons/crop-icons/Artichoke_Stage_2.png", "icons/crop-icons/Artichoke_Stage_3.png", "icons/crop-icons/Artichoke_Stage_4.png", "icons/crop-icons/Artichoke_Stage_5.png"]
@@ -351,7 +351,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [2,2,2],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Amaranth_Seeds.png",
     harvestIcon: "icons/crop-icons/Amaranth_Stage_5.png",
     growthIcons: ["icons/crop-icons/Amaranth_Stage_2.png", "icons/crop-icons/Amaranth_Stage_3.png", "icons/crop-icons/Amaranth_Stage_4.png"]
@@ -364,7 +364,7 @@ export const crops = [
     regrowthTime: 5,
     growthStages: [1,1,1,1],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Eggplant_Seeds.png",
     harvestIcon: "icons/crop-icons/Eggplant_Stage_6.png",
     growthIcons: ["icons/crop-icons/Eggplant_Stage_2.png", "icons/crop-icons/Eggplant_Stage_3.png", "icons/crop-icons/Eggplant_Stage_4.png", "icons/crop-icons/Eggplant_Stage_5.png"]
@@ -376,7 +376,7 @@ export const crops = [
     growthTime: 13,
     growthStages: [2,3,4,3],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Pumpkin_Seeds.png",
     harvestIcon: "icons/crop-icons/Pumpkin_Stage_6.png",
     growthIcons: ["icons/crop-icons/Pumpkin_Stage_2.png", "icons/crop-icons/Pumpkin_Stage_3.png", "icons/crop-icons/Pumpkin_Stage_4.png", "icons/crop-icons/Pumpkin_Stage_5.png"]
@@ -388,7 +388,7 @@ export const crops = [
     growthTime: 4,
     growthStages: [1,1,1],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Bok_Choy_Seeds.png",
     harvestIcon: "icons/crop-icons/Bok_Choy_Stage_5.png",
     growthIcons: ["icons/crop-icons/Bok_Choy_Stage_2.png", "icons/crop-icons/Bok_Choy_Stage_3.png", "icons/crop-icons/Bok_Choy_Stage_4.png"]
@@ -401,7 +401,7 @@ export const crops = [
     regrowthTime: 4,
     growthStages: [1,2,2,2],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Broccoli_Seeds.png",
     harvestIcon: "icons/crop-icons/Broccoli_Stage_5.png",
     growthIcons: ["icons/crop-icons/Broccoli_Stage_1.png", "icons/crop-icons/Broccoli_Stage_2.png", "icons/crop-icons/Broccoli_Stage_3.png", "icons/crop-icons/Broccoli_Stage_4.png"]
@@ -414,7 +414,7 @@ export const crops = [
     regrowthTime: 5,
     growthStages: [2,1,1,2],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Cranberry_Seeds.png",
     harvestIcon: "icons/crop-icons/Cranberry_Stage_6.png",
     growthIcons: ["icons/crop-icons/Cranberry_Stage_2.png", "icons/crop-icons/Cranberry_Stage_3.png", "icons/crop-icons/Cranberry_Stage_4.png", "icons/crop-icons/Cranberry_Stage_5.png"]
@@ -426,7 +426,7 @@ export const crops = [
     growthTime: 10,
     growthStages: [3,3,3],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Yam_Seeds.png",
     harvestIcon: "icons/crop-icons/Yam_Stage_5.png",
     growthIcons: ["icons/crop-icons/Yam_Stage_2.png", "icons/crop-icons/Yam_Stage_3.png", "icons/crop-icons/Yam_Stage_4.png"]
@@ -438,7 +438,7 @@ export const crops = [
     growthTime: 6,
     growthStages: [1,2,2],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Beet_Seeds.png",
     harvestIcon: "icons/crop-icons/Beet_Stage_5.png",
     growthIcons: ["icons/crop-icons/Beet_Stage_2.png", "icons/crop-icons/Beet_Stage_3.png", "icons/crop-icons/Beet_Stage_4.png"]
@@ -450,7 +450,7 @@ export const crops = [
     growthTime: 12,
     growthStages: [4,4,3],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Fairy_Seeds.png",
     harvestIcon: "icons/crop-icons/Fairy_Rose_Stage_5.png",
     growthIcons: ["icons/crop-icons/Fairy_Rose_Stage_2.png", "icons/crop-icons/Fairy_Rose_Stage_3.png", "icons/crop-icons/Fairy_Rose_Stage_4.png"]
@@ -463,7 +463,7 @@ export const crops = [
     regrowthTime: 3,
     growthStages: [1,2,3,3],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Grape_Starter.png",
     harvestIcon: "icons/crop-icons/Grape_Stage_6.png",
     growthIcons: ["icons/crop-icons/Grape_Stage_3.png", "icons/crop-icons/Grape_Stage_4.png", "icons/crop-icons/Grape_Stage_5.png", "icons/crop-icons/Grape_Stage_5.png"]
@@ -475,7 +475,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [2,1,2,1],
     diesAtEndOf: ["invierno"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Powdermelon_Seeds.png",
     harvestIcon: "icons/crop-icons/Powdermelon_Stage_6.png",
     growthIcons: ["icons/crop-icons/Powdermelon_Stage_2.png", "icons/crop-icons/Powdermelon_Stage_3.png", "icons/crop-icons/Powdermelon_Stage_4.png", "icons/crop-icons/Powdermelon_Stage_5.png"]
@@ -485,9 +485,9 @@ export const crops = [
     key: "Baya de gema dulce",
     season: ["otoño"],
     growthTime: 24,
-    growthStages: [2,4,6,6,6],
+    growthStages: [1,4,6,6,6],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Rare_Seed.png",
     harvestIcon: "icons/crop-icons/Sweet_Gem_Berry_Stage_6.png",
     growthIcons: ["icons/crop-icons/Sweet_Gem_Berry_Stage_1.png", "icons/crop-icons/Sweet_Gem_Berry_Stage_2.png", "icons/crop-icons/Sweet_Gem_Berry_Stage_3.png", "icons/crop-icons/Sweet_Gem_Berry_Stage_4.png", "icons/crop-icons/Sweet_Gem_Berry_Stage_5.png"]
@@ -498,9 +498,9 @@ export const crops = [
     season: ["primavera", "verano", "otoño"],
     growthTime: 28,
     regrowthTime: 7,
-    growthStages: [2,7,7,7,5],
+    growthStages: [1,7,7,7,5],
     diesAtEndOf: ["otoño"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Ancient_Seeds.png",
     harvestIcon: "icons/crop-icons/Ancient_Fruit_Stage_6.png",
     growthIcons: ["icons/crop-icons/Ancient_Fruit_Stage_1.png", "icons/crop-icons/Ancient_Fruit_Stage_2.png", "icons/crop-icons/Ancient_Fruit_Stage_3.png", "icons/crop-icons/Ancient_Fruit_Stage_4.png", "icons/crop-icons/Ancient_Fruit_Stage_5.png"]
@@ -512,7 +512,7 @@ export const crops = [
     growthTime: 10,
     growthStages: [2,3,4],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Cerca a agua":0.3},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Cerca a agua":0.3, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Taro_Tuber.png",
     harvestIcon: "icons/crop-icons/Taro_Stage_5.png",
     growthIcons: ["icons/crop-icons/Taro_Stage_2.png", "icons/crop-icons/Taro_Stage_3.png", "icons/crop-icons/Taro_Stage_4.png"]
@@ -525,7 +525,7 @@ export const crops = [
     regrowthTime: 7,
     growthStages: [3,3,4,3],
     diesAtEndOf: ["verano"],
-    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33},
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Pineapple_Seeds.png",
     harvestIcon: "icons/crop-icons/Pineapple_Stage_6.png",
     growthIcons: ["icons/crop-icons/Pineapple_Stage_2.png", "icons/crop-icons/Pineapple_Stage_3.png", "icons/crop-icons/Pineapple_Stage_4.png", "icons/crop-icons/Pineapple_Stage_5.png"]
@@ -537,6 +537,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [3, 4],
     diesAtEndOf: ["primavera"],
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Spring_Seeds.png",
     harvestIcon: "icons/crop-icons/Wild_Seeds_Stage_3.png",
     growthIcons: ["icons/crop-icons/Wild_Seeds_Stage_1.png", "icons/crop-icons/Wild_Seeds_Stage_2.png"]
@@ -548,6 +549,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [3, 4],
     diesAtEndOf: ["verano"],
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Summer_Seeds.png",
     harvestIcon: "icons/crop-icons/Wild_Seeds_Stage_3.png",
     growthIcons: ["icons/crop-icons/Wild_Seeds_Stage_1.png", "icons/crop-icons/Wild_Seeds_Stage_2.png"]
@@ -559,6 +561,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [3, 4],
     diesAtEndOf: ["otoño"],
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Fall_Seeds.png",
     harvestIcon: "icons/crop-icons/Wild_Seeds_Stage_3.png",
     growthIcons: ["icons/crop-icons/Wild_Seeds_Stage_1.png", "icons/crop-icons/Wild_Seeds_Stage_2.png"]
@@ -570,6 +573,7 @@ export const crops = [
     growthTime: 7,
     growthStages: [3, 4],
     diesAtEndOf: ["invierno"],
+    fertilizers: {"Acelerador Básico": 0.10, "Acelerador Deluxe": 0.25, "Fertilizante Ultra-rápido": 0.33, "Agricultor": 0.10, "Agricultor + A. Básico": 0.20, "Agricultor + A. Deluxe": 0.35, "Agricultor + A. Ultra Rápido": 0.43},
     icon: "icons/crop-icons/Winter_Seeds.png",
     harvestIcon: "icons/crop-icons/Wild_Seeds_Stage_3.png",
     growthIcons: ["icons/crop-icons/Wild_Seeds_Stage_1.png", "icons/crop-icons/Wild_Seeds_Stage_2.png"]

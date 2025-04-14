@@ -78,7 +78,7 @@ export function openPlantModal(day) {
       warningText.textContent = "";
       plantButton.disabled = false;
     }
-  }  
+  }
 
   fertilizerSelect.addEventListener("change", e => {
     selectedFertilizer = e.target.value;
@@ -121,7 +121,7 @@ export function openPlantModal(day) {
   renderHarvestableCropsList(day, season);
 }
 
-export function renderPlantedCropsList(day, season) {
+function renderPlantedCropsList(day, season) {
   const listContainerId = "planted-crops-list";
   let container = document.getElementById(listContainerId);
 
@@ -157,7 +157,7 @@ export function renderPlantedCropsList(day, season) {
     cropDiv.className = "crop-modal";
 
     const fertilizerBoost = crop.fertilizers?.[entry.fertilizer] || 0;
-    const adjustedGrowthTime = Math.ceil(crop.growthTime * (1 - fertilizerBoost));
+    const adjustedGrowthTime = Math.floor(crop.growthTime * (1 - fertilizerBoost));
     const plantedDay = entry.plantedDayNumber ?? parseInt(day.split(" ")[1]);
     const harvestDayNum = plantedDay + adjustedGrowthTime;
     const harvestDayStr = `${season} ${harvestDayNum}`;
@@ -170,7 +170,7 @@ export function renderPlantedCropsList(day, season) {
       </span>
       <img class="crop-icon-modal" src="${crop.icon}" alt="${crop.name}">
       <span class="crop-name-modal">${crop.name} (${entry.count})</span>
-      ${entry.fertilizer ? `<span class="fertilizer-info">(Fertilizante: ${entry.fertilizer})</span>` : ""}
+      ${entry.fertilizer ? `<span class="fertilizer-info">(${entry.fertilizer})</span>` : ""}
       <span class="harvest-info">Cosecha: ${harvestDayStr}</span>
     `;
 
@@ -198,7 +198,7 @@ export function renderPlantedCropsList(day, season) {
             const plantedDay = entryItem.plantedDayNumber ?? parseInt(day.split(" ")[1]);
             const cropData = crops[cropKey];
             const fertilizerBoost = cropData.fertilizers?.[fertilizer] || 0;
-            const growthTime = Math.ceil(cropData.growthTime * (1 - fertilizerBoost));
+            const growthTime = Math.floor(cropData.growthTime * (1 - fertilizerBoost));
             const harvestDay = plantedDay + growthTime;
             const harvestKey = `${cropData.name}-${fertilizer || "none"}-${harvestDay}`;
             localStorage.removeItem(`harvested-${harvestKey}`);
@@ -276,7 +276,7 @@ function renderHarvestableCropsList(day, season) {
     for (const entry of cropsArray) {
       const crop = crops[entry.cropKey];
       const fertilizerBoost = crop.fertilizers?.[entry.fertilizer] || 0;
-      const growthTime = Math.ceil(crop.growthTime * (1 - fertilizerBoost));
+      const growthTime = Math.floor(crop.growthTime * (1 - fertilizerBoost));
       const plantedDay = entry.plantedDayNumber ?? parseInt(plantDay.split(" ")[1]);
       const harvestDay = plantedDay + growthTime;
 
