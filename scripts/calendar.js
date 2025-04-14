@@ -41,7 +41,20 @@ export function createCalendar(season) {
   const days = seasons[season];
   const seasonEvents = events.filter(event => event.season === season);
 
-  let calendarHTML = `<h2>${capitalizeFirstLetter(season)}</h2><div class="calendar-grid">`;
+  let calendarHTML = `
+  <h2>${capitalizeFirstLetter(season)}</h2>
+  <div class="calendar-weekdays">
+    <div>Lun</div>
+    <div>Mar</div>
+    <div>Mié</div>
+    <div>Jue</div>
+    <div>Vie</div>
+    <div>Sáb</div>
+    <div>Dom</div>
+  </div>
+  <div class="calendar-grid">
+`;
+
 
   days.forEach((day) => {
     const dayNumber = parseInt(day.split(' ')[1]);

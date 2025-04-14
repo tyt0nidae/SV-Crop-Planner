@@ -94,6 +94,9 @@
   background-color: transparent;
   padding: 3px;
   cursor: pointer;
+  border: 0px;
+  font-weight: bold;
+  text-shadow: var(--text-main);;
 }
 
 

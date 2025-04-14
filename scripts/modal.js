@@ -171,7 +171,7 @@ function renderPlantedCropsList(day, season) {
       <img class="crop-icon-modal" src="${crop.icon}" alt="${crop.name}">
       <span class="crop-name-modal">${crop.name} (${entry.count})</span>
       ${entry.fertilizer ? `<span class="fertilizer-info">(${entry.fertilizer})</span>` : ""}
-      <span class="harvest-info">Cosecha: ${harvestDayStr}</span>
+      <span class="harvest-info">Cosecha: ${capitalizeFirstLetter(harvestDayStr)}</span>
     `;
 
     container.appendChild(cropDiv);
