@@ -15,7 +15,6 @@ button:hover, select:hover {
 }
 
 .seasonBtn {
-  padding: 8px 18px;
   margin: 6px;
   background-size: cover;
   background-position: center;
@@ -26,6 +25,7 @@ button:hover, select:hover {
   cursor: pointer;
   color: transparent;
   width: 50px;
+  height: 30px;
 }
 
 .seasonBtn[data-season="primavera"] {

@@ -273,7 +273,6 @@ function handlePlanting(crop, plantDay, cropData, printed, calendarCells, curren
         `;
         cell.appendChild(tag);
         printed.add(key);
-        console.log(`Mostrando ${crop.name} en día ${day}, planted ${cropData.plantedSeason || current}`);
       }
     }
   }
@@ -309,7 +308,6 @@ async function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, 
       }
   
       if (!displayedIcons[dayInSeason].has(key)) {
-        console.log(`Mostrando ${crop.name} en día ${dayInSeason}, etapa ${growthStageIndex}`);
         const tag = createCropTag(crop, plantDay, absoluteStart + growthTime, i, totalDay, growthStageIndex);
   
         cell.appendChild(tag);
