@@ -172,12 +172,13 @@ function createCropTag(crop, plantDay, harvestDay, i, totalDay, stageIdx) {
   return tag;
 }
 
-function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, current) {
+function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, current) { 
   const initialHarvestDay = harvestDay;
   const regrowthTime = crop.regrowthTime;
   const maxDay = seasonOrder.length * 28;
   const plantedSeason = cropData.plantedSeason || current;
   const fertilizer = cropData.fertilizer || "none";
+
 
   let adjustedHarvestDay = initialHarvestDay;
 
@@ -185,8 +186,10 @@ function handleRegrowth(crop, harvestDay, cropData, printed, calendarCells, curr
     const growthTime = crop.growthTime;
     const growthFactor = crop.fertilizers[fertilizer] || 0;
     const adjustedGrowthTime = Math.floor(growthTime * (1 - growthFactor));
-
-    adjustedHarvestDay = 1 + adjustedGrowthTime;
+    const plantedDay = cropData.plantDay
+    const plantedSeasonIndex = seasonOrder.indexOf(plantedSeason);
+    const absolutePlantedDay = (plantedSeasonIndex * 28) + plantedDay;
+    adjustedHarvestDay = absolutePlantedDay + adjustedGrowthTime;
   }
 
   const allHarvestDays = [adjustedHarvestDay];
@@ -251,6 +254,7 @@ function handlePlanting(crop, plantDay, cropData, printed, calendarCells, curren
   const { season, day } = getSeasonAndDay(plantTotalDay);
   const prevSeasonIdx = seasonOrder.indexOf(season) - 1;
   const prevSeason = seasonOrder[prevSeasonIdx >= 0 ? prevSeasonIdx : seasonOrder.length - 1];
+  cropData.plantDay = plantDay;
   
   if (crop.diesAtEndOf?.includes(prevSeason)) return;
 
@@ -276,9 +280,11 @@ function handlePlanting(crop, plantDay, cropData, printed, calendarCells, curren
       }
     }
   }
+  localStorage.setItem(`cropData-${crop.key}`, JSON.stringify(cropData));
 }
 
 async function handleGrowth(crop, plantDay, growthTime, absoluteStart, current, printed, calendarCells, displayedIcons, fertilizer) {
+  
   let growthStageIndex = 0;
   let currentGrowthTime = 0;
 

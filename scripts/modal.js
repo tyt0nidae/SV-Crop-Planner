@@ -178,7 +178,8 @@ function renderPlantedCropsList(day, season) {
     const adjustedGrowthTime = Math.floor(crop.growthTime * (1 - fertilizerBoost));
     const plantedDay = entry.plantedDayNumber ?? parseInt(day.split(" ")[1]);
     const harvestDayNum = plantedDay + adjustedGrowthTime;
-    const harvestDayStr = `${season} ${harvestDayNum}`;
+    const harvestDayStrSV = getStardewDateFromAbsoluteDay(harvestDayNum);
+    
 
     cropDiv.innerHTML = `
       <span class="delete-crop-btn" 
@@ -189,7 +190,7 @@ function renderPlantedCropsList(day, season) {
       <img class="crop-icon-modal" src="${crop.icon}" alt="${crop.name}">
       <span class="crop-name-modal">${crop.name} (${entry.count})</span>
       ${entry.fertilizer ? `<span class="fertilizer-info">(${entry.fertilizer})</span>` : ""}
-      <span class="harvest-info">Cosecha: ${capitalizeFirstLetter(harvestDayStr)}</span>
+      <span class="harvest-info">Cosecha: ${capitalizeFirstLetter(harvestDayStrSV)}</span>
     `;
 
     container.appendChild(cropDiv);
