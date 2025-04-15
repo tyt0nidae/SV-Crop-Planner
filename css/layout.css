@@ -34,6 +34,27 @@ header img{
   padding-left: 10px;
 }
 
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+    margin: 2px;
+  }
+
+  #season-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
 /* --- Navigation & Calendar --- */
 #season-nav {
   display: flex;
@@ -62,6 +83,18 @@ header img{
   box-shadow: inset 0 0 8px #a97442, 0 0 14px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    width: 86%;
+    height: auto;
+    padding: 4px;
+    gap: 6px;
+    overflow: hidden;
+  }
 }
 
 .calendar-day {
@@ -93,7 +126,6 @@ header img{
   border-bottom: 2px dashed #c29d6b;
 }
 
-
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -111,4 +143,10 @@ header img{
   border-radius: 12px;
   box-shadow: inset 0 0 8px #a97442, 0 0 14px rgba(0, 0, 0, 0.3);
   font-family: 'Verdana', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .calendar-weekdays {
+    display: none;
+  }
 }
