@@ -67,6 +67,14 @@ button:hover, select:hover {
   right: 110px;
 }
 
+@media (max-width: 768px) {
+  .ieBtns{
+    margin: 6px;
+    position: relative;
+    right: auto;
+  }  
+}
+
 /* --- Modal --- */
 .modal {
   background-color: rgba(0, 0, 0, 0.4);

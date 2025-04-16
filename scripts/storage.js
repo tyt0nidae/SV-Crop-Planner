@@ -20,7 +20,6 @@ export function savePlantedCrops() {
   }
 }
 
-
 document.getElementById("exportBtn").addEventListener("click", () => {
   const dataStr = JSON.stringify(plantedCrops, null, 2);
   const blob = new Blob([dataStr], { type: "application/json" });
@@ -37,16 +36,33 @@ document.getElementById("exportBtn").addEventListener("click", () => {
 document.getElementById("importBtn").addEventListener("click", () => {
   document.getElementById("importInput").click();
 });
+
 document.getElementById("importInput").addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (!file) return;
-
   const reader = new FileReader();
   reader.onload = (e) => {
     try {
       const importedData = JSON.parse(e.target.result);
-      localStorage.setItem("plantedCrops", JSON.stringify(importedData));
-      Object.assign(plantedCrops, importedData);
+
+      const saved = localStorage.getItem("plantedCrops");
+      const currentData = saved ? JSON.parse(saved) : {};
+
+      for (const season in importedData) {
+        if (!currentData[season]) {
+          currentData[season] = {};
+        }
+
+        for (const day in importedData[season]) {
+          if (!currentData[season][day]) {
+            currentData[season][day] = [];
+          }
+          currentData[season][day].push(...importedData[season][day]);
+        }
+      }
+
+      localStorage.setItem("plantedCrops", JSON.stringify(currentData));
+      Object.assign(plantedCrops, currentData);
       location.reload();
     } catch (error) {
       console.error("Error al importar los datos:", error);

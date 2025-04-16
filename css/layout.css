@@ -55,7 +55,6 @@ header img{
   }
 }
 
-
 /* --- Navigation & Calendar --- */
 #season-nav {
   display: flex;
@@ -89,7 +88,7 @@ header img{
 
 @media (max-width: 768px) {
   .calendar-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: minmax(100px, auto);
     width: 86%;
     height: auto;
@@ -152,3 +151,4 @@ header img{
     display: none;
   }
 }
+
