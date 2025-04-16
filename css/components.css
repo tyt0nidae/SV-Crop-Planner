@@ -56,6 +56,17 @@ button:hover, select:hover {
   cursor: pointer;
   color: transparent;
 }
+
+#importInput {
+  display: none;
+}
+
+.ieBtns{
+  position: absolute;
+  margin: 6px;
+  right: 110px;
+}
+
 /* --- Modal --- */
 .modal {
   background-color: rgba(0, 0, 0, 0.4);

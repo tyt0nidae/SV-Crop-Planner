@@ -51,6 +51,7 @@ header img{
   #season-nav {
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
   }
 }
 
@@ -60,7 +61,8 @@ header img{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;  
+  flex-wrap: wrap; 
+  position: relative;
 }
 
 #calendar-container {

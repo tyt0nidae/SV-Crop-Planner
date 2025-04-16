@@ -19,3 +19,38 @@ export function savePlantedCrops() {
     console.error("Error al guardar los cultivos plantados:", e);
   }
 }
+
+
+document.getElementById("exportBtn").addEventListener("click", () => {
+  const dataStr = JSON.stringify(plantedCrops, null, 2);
+  const blob = new Blob([dataStr], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "cultivos.json";
+  a.click();
+  
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById("importBtn").addEventListener("click", () => {
+  document.getElementById("importInput").click();
+});
+document.getElementById("importInput").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const importedData = JSON.parse(e.target.result);
+      localStorage.setItem("plantedCrops", JSON.stringify(importedData));
+      Object.assign(plantedCrops, importedData);
+      location.reload();
+    } catch (error) {
+      console.error("Error al importar los datos:", error);
+    }
+  };
+  reader.readAsText(file);
+});
